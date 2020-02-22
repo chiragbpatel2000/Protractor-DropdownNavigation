@@ -5,9 +5,10 @@
 
 describe('Calculator Tests', function(){
 
-    function Cal(a,b)
+    function AddCal(a,b)
     {
-        var textBox = element(by.model("first")).sendKeys(a);		
+        var textBox = element(by.model("first")).sendKeys(a);
+        var selectValue = element.all(by.cssContainingText('option','+')).click();		
         var textBoxSecond = element(by.model("second")).sendKeys(b);
         element(by.id("gobutton")).click()
         
@@ -52,11 +53,11 @@ describe('Calculator Tests', function(){
 		
 		browser.get("http://juliemr.github.io/protractor-demo");
         
-        Cal(2,3)
-        Cal(5,7)
-        Cal(7,8)
-        Cal(9,7)
-        Cal(10,30)
+        AddCal(2,3)
+        AddCal(5,7)
+        AddCal(7,8)
+        AddCal(9,7)
+        AddCal(10,30)
         element(by.repeater("result in memory")).element(by.css("td:nth-child(3)")).getText().then(function(RepeterText){
 			console.log("Repeter Value is :"+RepeterText)
 			expect(element(by.css("h2[class='ng-binding']")).getText()).toBe(RepeterText)
