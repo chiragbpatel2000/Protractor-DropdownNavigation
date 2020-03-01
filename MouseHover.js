@@ -1,5 +1,3 @@
-// Handling Alert Window okay and Dismiss 
-
 describe("Alert HAndle", function(){
 
     browser.ignoreSynchronization = true;
@@ -11,11 +9,17 @@ describe("Alert HAndle", function(){
 		// navigate to website 
         browser.get("https://chercher.tech/practice/popups");
 
-        browser.actions().click(element(by.name("alert"))).perform()
-        browser.sleep(3000)
-        browser.switchTo().alert().accept();
+        browser.actions().mouseMove(element(by.id("sub-menu"))).perform();
 
-        //browser.switchTo().alert().dismiss();  --- Dismissing alert
+        browser.sleep(3000);
+
+        element(by.id("link2")).getText().then(function(textprint){
+            console.log(textprint)
+        })
+
+        browser.sleep(3000);
+
+
         
     })
 })

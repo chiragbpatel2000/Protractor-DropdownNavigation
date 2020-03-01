@@ -4,5 +4,9 @@
 
 exports.config = {
      seleniumAddress: 'http://localhost:4444/wd/hub',
-     specs: ['DropDownMainfunction.js']
+
+     
+
+     
+     specs: ['irctcWindowHandle.js']
    }
